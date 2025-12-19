@@ -1,22 +1,28 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f7f7f7;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  background: #f4f4f4;
+}
+
+/* Mobile-first container */
 .container {
-  max-width: 400px;
-  margin: 60px auto;
-  background: white;
-  padding: 24px;
-  border-radius: 12px;
+  max-width: 420px;
+  margin: 16px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  margin-bottom: 4px;
-  font-size: 22px;
+h2,
+h3 {
+  margin-top: 8px;
 }
 
 #bizAddress {
@@ -25,57 +31,67 @@ h1 {
   margin-bottom: 20px;
 }
 
-.review-btn {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 12px 20px;
-  background: #1a73e8;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
+/* Smileys — TOUCH FRIENDLY */
+.smileys {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
+.smileys button {
+  font-size: 40px;
+  padding: 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.smileys button:active {
+  transform: scale(1.2);
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+/* Buttons */
+button,
+.review-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  font-size: 16px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover,
 .review-btn:hover {
   background: #1558b0;
 }
 
-.smileys button {
-  font-size: 32px;
-  margin: 8px;
-  padding: 10px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.smileys button:hover {
-  transform: scale(1.2);
-}
-
-textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-}
-
-button {
-  padding: 10px 20px;
-  background: #444;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #222;
-}
-
 #statusMsg {
-  margin-top: 10px;
+  margin-top: 12px;
+  font-size: 14px;
   color: green;
+}
+
+/* Desktop enhancement */
+@media (min-width: 768px) {
+  .container {
+    margin-top: 60px;
+  }
 }
