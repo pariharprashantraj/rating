@@ -1,0 +1,13 @@
+<h3>⭐ Thank you!</h3>
+<p>Would you like to share your experience on Google?</p>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const google = params.get("google");
+
+  document.write(`
+  <a href="${google}" target="_blank">
+    Review us on Google
+  </a>
+`);
+</script>
