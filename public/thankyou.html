@@ -1,13 +1,29 @@
-<h3>⭐ Thank you!</h3>
-<p>Would you like to share your experience on Google?</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thank You</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>⭐ Thank you!</h3>
+      <p>Would you like to share your experience on Google?</p>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const google = params.get("google");
+      <a id="googleReviewBtn" class="review-btn" target="_blank">
+        Review us on Google
+      </a>
+    </div>
 
-  document.write(`
-  <a href="${google}" target="_blank">
-    Review us on Google
-  </a>
-`);
-</script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const googleUrl = params.get("google");
+
+      if (googleUrl) {
+        document.getElementById("googleReviewBtn").href = googleUrl;
+      } else {
+        document.getElementById("googleReviewBtn").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

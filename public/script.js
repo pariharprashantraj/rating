@@ -15,18 +15,30 @@ const googleUrl = params.get("google");
 document.getElementById("bizName").innerText = name;
 document.getElementById("bizAddress").innerText = address;
 
-window.rate = async function (rating) {
-  await addDoc(collection(db, "feedbacks"), {
-    businessId,
-    rating,
-    createdAt: serverTimestamp(),
-    source: "qr",
-  });
+let isSubmitting = false;
 
-  if (rating >= 4 && googleUrl) {
-    window.location.href =
-      "thankyou.html?google=" + encodeURIComponent(googleUrl);
-  } else {
-    window.location.href = "feedback.html";
+window.rate = async function (rating) {
+  if (isSubmitting) return;
+  isSubmitting = true;
+
+  try {
+    await addDoc(collection(db, "feedbacks"), {
+      businessId,
+      rating,
+      createdAt: serverTimestamp(),
+      source: "rating_page",
+    });
+
+    if (rating >= 4 && googleUrl) {
+      window.location.href =
+        "thankyou.html?google=" + encodeURIComponent(googleUrl);
+    } else {
+      window.location.href = `feedback.html?bizId=${businessId}&rating=${rating}&name=${encodeURIComponent(
+        name
+      )}`;
+    }
+  } catch (err) {
+    alert("Something went wrong. Please try again.");
+    isSubmitting = false;
   }
 };

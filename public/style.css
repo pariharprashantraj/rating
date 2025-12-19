@@ -25,6 +25,21 @@ h1 {
   margin-bottom: 20px;
 }
 
+.review-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 20px;
+  background: #1a73e8;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.review-btn:hover {
+  background: #1558b0;
+}
+
 .smileys button {
   font-size: 32px;
   margin: 8px;
@@ -37,4 +52,30 @@ h1 {
 
 .smileys button:hover {
   transform: scale(1.2);
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+button {
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #222;
+}
+
+#statusMsg {
+  margin-top: 10px;
+  color: green;
 }

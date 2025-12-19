@@ -1,5 +1,29 @@
-<h3>We’re sorry 😔</h3>
-<p>Please tell us what went wrong.</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3 id="bizName"></h3>
+      <p>We’re sorry 😔</p>
+      <p>Please tell us what went wrong.</p>
 
-<textarea placeholder="Your feedback"></textarea><br /><br />
-<button>Submit</button>
+      <textarea
+        id="feedbackText"
+        placeholder="Your feedback"
+        rows="4"
+      ></textarea>
+
+      <br /><br />
+
+      <button onclick="submitFeedback()">Submit</button>
+
+      <p id="statusMsg"></p>
+    </div>
+
+    <script type="module" src="feedback.js"></script>
+  </body>
+</html>

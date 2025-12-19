@@ -6,17 +6,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2 id="bizName"></h2>
-    <p id="bizAddress"></p>
+    <div class="container">
+      <h2 id="bizName"></h2>
+      <p id="bizAddress"></p>
 
-    <h3>How was your experience?</h3>
+      <h3>How was your experience?</h3>
 
-    <div class="smileys">
-      <button onclick="rate(1)">😡</button>
-      <button onclick="rate(2)">🙁</button>
-      <button onclick="rate(3)">😐</button>
-      <button onclick="rate(4)">🙂</button>
-      <button onclick="rate(5)">😄</button>
+      <div class="smileys">
+        <button aria-label="Very bad" onclick="rate(1)">😡</button>
+        <button aria-label="Bad" onclick="rate(2)">🙁</button>
+        <button aria-label="Okay" onclick="rate(3)">😐</button>
+        <button aria-label="Good" onclick="rate(4)">🙂</button>
+        <button aria-label="Excellent" onclick="rate(5)">😄</button>
+      </div>
     </div>
 
     <script type="module" src="script.js"></script>
